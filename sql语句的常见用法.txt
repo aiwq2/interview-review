@@ -1,0 +1,20 @@
+具体可以参考sql之母：http://sqlmother.yupi.icu/
+where
+group by
+order by asc desc
+having
+like
+and or not
+distinct
+limit
+case when then else end
+cross join（直接是笛卡尔乘积拼接）
+join on(相当于inner join)
+left join on
+right join on
+exists
+union
+开窗函数：
+    SUM(total_amount) OVER (PARTITION BY customer_id ORDER BY score ASC) AS customer_total_amount
+    RANK() OVER (PARTITION BY 列名1, 列名2, ... -- 可选，用于指定分组列 ORDER BY 列名3 [ASC|DESC], 列名4 [ASC|DESC], ... -- 用于指定排序列及排序方式) AS rank_column
+    Lag 和 Lead 的作用是获取在当前行之前或之后的行的值:LAG(column_name, offset, default_value) OVER (PARTITION BY partition_column ORDER BY sort_column);LEAD(column_name, offset, default_value) OVER (PARTITION BY partition_column ORDER BY sort_column)
