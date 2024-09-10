@@ -2,7 +2,7 @@ import numpy as np
 import random
 import time
 
-nums1 = [5, 2, 8, 1, 9, 3]
+nums1 = [5, 2, 8, 1,5, 9, 3]
 nums2 = []
 nums3 = [2, -1, 5, 1, -3, 2, 1, 1, 8, -5, 2]
 nums4 = [1]
@@ -31,14 +31,14 @@ def quick_sort(nums, left, right):
     if left < right:
         mid = partition(nums, left, right)
         quick_sort(nums, left, mid - 1)
-        quick_sort(nums, mid + 1, right)
+        quick_sort(nums, mid+1 , right)
 
 
 time_start = time.time()
-length = len(nums6)
-quick_sort(nums6, 0, length - 1)
+length = len(nums1)
+quick_sort(nums1, 0, length - 1)
 time_end = time.time()
-print(nums6)
+print(nums1)
 print('time:', time_end - time_start)
 
 # import random
@@ -59,3 +59,4 @@ print('time:', time_end - time_start)
 # time_end = time.time()
 # print(ans)
 # print('time:', time_end - time_start)
+

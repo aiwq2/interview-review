@@ -18,9 +18,10 @@ class HeapSort():
             nums[0] = nums[end]
             nums[end] = temp
             end -= 1
-            for i in range((end - 1) // 2, -1, -1):
-                self.Heap_once(nums, i, end)
+            # for i in range((end - 1) // 2, -1, -1):
+            #     self.Heap_once(nums, i, end)
             # print(nums)
+            self.Heap_once(nums,0,end)
 
     def build_heap(self, nums, end):
         for i in range((end - 1) // 2, -1, -1):
