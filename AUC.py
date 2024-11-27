@@ -9,6 +9,8 @@ def naive_auc(labels,preds):
     n_pos = sum(labels)
     n_neg = len(labels) - n_pos
     total_pair = n_pos * n_neg
+    if total_pair==0:
+        return 0
 
     labels_preds = zip(labels,preds)
     labels_preds = sorted(labels_preds,key=lambda x:x[1])

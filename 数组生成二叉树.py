@@ -17,18 +17,27 @@ nums=[1,5,3,0,9,1]
 
 
 index=0
-def generate(nums):
+def generate_preorder(nums):
     global index
     if  index>=len(nums) or nums[index]==0:
         return None
     
     root=Node(nums[index])
     index+=1
-    root.left=generate(nums)
+    root.left=generate_preorder(nums)
     index+=1
-    root.right=generate(nums)
+    root.right=generate_preorder(nums)
     return root
 
-root=generate(nums)
+def generate_cengxu(nums,index):
+    if index>=len(nums) or nums[index]==0:
+        return None
+    root=Node(nums[index])
+    root.left=generate_cengxu(nums,2*index+1)
+    root.right=generate_cengxu(nums,2*index+2)
+    return root
+
+# root=generate_preorder(nums)
+root=generate_cengxu(nums,0)
 result=preorder_traversal(root)
 print(result)
